@@ -1,0 +1,8 @@
+Functions :
+
+access modifier  return type  name (){
+	body
+	return statement;
+}
+
+
