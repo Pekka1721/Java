@@ -1,0 +1,352 @@
+					OSI model 
+
+OSI - open system intercxn model
+standard way to communicate with each computer 
+7 layers 
+
+1. Application layer -  Its implemented in Application like browsers, messengers, 
+2. Presentation layer - Sent message/data is sent into presented layer . Converts it into binary or machine language (Data encription happens. Provides                          abstraction) 
+
+			Data is compressed . Translation 
+3. Session layer -	Now data is sent to session layer . It helps in making connextion / Authentication.Permissions etc 
+
+4. Transport layer -	Data is transportated.
+5. Network layer -	communication between other compputers. Routers lives here , logical adressing (ip adresses assigns here). Routing the data 
+6. Data link  layer -	allows to communicate with hosts logical addressing 
+			
+			computer A  ------ network/wifi------facebookserver--------      			                                      [data packet]
+			
+			receiver-------computer B
+			ip. 192.168.1.1
+7. Physical layer -  hardware , wires transfers bits , electrical signals.
+
+ The revers layer will work at receivers end . 
+7-6-5-4 3 2 1    
+
+
+
+Another Model 
+
+						Tcp/Ip model 
+Internet Protocol Suit
+it has five layers
+
+
+1. Application
+2. Transport
+3. Network
+4. Data Link
+5. Physical
+				---------------------------------------------------------------------------------------------------------------------------------------------		
+Application Layer:
+
+User interaction happens in this layer. It contains applications, WebPages, Browsers . It lies on the devices
+Whatsapp,Browser etc
+
+Protocols of Application layers: Client server Architechure
+
+Client  ----request---->  Server
+	<---response----
+
+Collection of huge no computers/servers is called Data Centers
+	
+			Peer to peer Architechure(p2p)
+No large data centre are present/or a one dedicated server
+Many computers are connected to serve as client and server
+
+			Networking Devices
+Repeater
+Hub 
+Bridge
+Switch 
+Routers
+Gateway
+Brouter
+
+Protocols of Application layers:
+Web Protocls:
+	Tcp/ip : 
+		Http 
+		Dhcp
+		Ftp
+		Smtp
+		pop3 &  imac
+		ssh
+		VNS
+	Telnet : port 23
+	UDP : stateless connection 
+	
+		Program : Whatsapp
+		processes  Send a message  record a vedio
+		thread will perform  a single task
+
+
+Sockets:Interface b/w processes and the internet
+Ports : Ephemeral ports 
+
+
+			Http:
+
+  		client -------------->server
+			<-------------
+http request
+http response
+ Application layer protocol and transport layer > Http uses Tcp  >its  stateless protocol. No data stored
+
+
+Http methods
+
+1.GET
+2.Post
+3.Put
+4.Delete
+
+Status codes
+ 1##  Informationl
+ 2## sucess
+ 3## redirecting
+ 4## clienterror
+ 5## server error
+
+Cookies : unique string
+		Stored in my browser . it will remeber the info about you in
+
+3rd party cookies > 
+
+
+How email Works?
+sending Smtp
+receving pop3
+
+sender > senders smtp server > connection > receiver smtp server>receiver 
+if the same server no connection will happen
+ 
+ Name server lookup commadn = nslookup
+
+pop - post office protocol 
+
+   client  > authorize > pop server
+	   < transfer  <
+
+Imap - 
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+					DNS
+
+Domain Name system
+Dns mapped to ip addresses
+Directory or Database service
+
+Classes of Domain name systems
+
+mail.google.com
+
+mail --> is sub domain
+google --> is second level domain
+com --> is top level domain
+
+					Root DNS servers
+it consits of top level domains like .io, .org, .com, 
+ex .  student.io, google.com, comclass.com
+
+root-servers.org
+
+ican.org maintains top level domains
+
+
+when you search a domain
+
+first it will check in own device ------> then in the ISP --> Root server__> then the top level domain
+
+
+dig google.com command 
+will show the exchange of dns 
+
+
+
+----------------------------------------------------------------------------
+Transport layer - 
+
+---------------
+IT LIES 	over the device
+Network layer to application layer is taken care by transport layer
+
+this layer consists of TCP/UDP
+
+
+sending message , a mail , vedio call
+
+they should receive same 
+How computer will determine that which data to which application
+
+multiplexing  and De-multiplexing
+
+ Primary side : transport layer MUX ---------->DeMUX of transport layer : Second layer
+ Transport layer attach the port number where it declare which application to send data
+
+Transport layer takes careof congestion control (Traffic)
+congestion control algorithms built in TCP
+
+
+Checksums:
+----------
+Data sending to friend (you will calculate a data value using checksum and attach to data) if the value is different on friend then data is lost
+
+Timers;
+-------
+  you ----------------------------------------------------Friend
+start timer
+end timer when data recived <------------------------------
+if timer expire then data lost
+ 
+Sequence number will be provided to eleminate duplicate data 
+
+
+                           UPD(user datagram  protocol)
+-------------------------------------------------------------------------------------------
+Data may or may not be deleiverd 
+Data may change on the way
+Data may not be in order
+
+connection less protocol
+
+udp uses checksums
+----------------------------------
+UPD - Packets | length of datagram|
+----------------------------------
+source port num | checksum        |
+-----------------------------------
+
+destination of port num           |
+
+Data
+___________________________________
+ it is very faster
+
+Dns is very fast 
+vedio conf. apps
+gaming
+
+command to check
+
+sudo tcpdump -c 5
+
+
+-------------------------------------------------------------------------------------
+							Tcp
+
+Transmission Control Protocol
+
+Transport layer protocol
+
+application layer sends lots of raw data
+Tcp segements this data
+It may also collect the data from network layer
+Congestion control
+When data is not arrive it takes care
+rearrange data maintain order of data
+
+emails, websurfing, 
+
+Features 
+--------
+
+this connection oriented
+Error control
+Congestion control
+Bi Derectional or Full Duplex
+
+
+ 			3-way Handshake
+-------------------------------------------------------------------------------
+
+client --------------sync flag-------------->server
+	|			sequence no(32 random)		|
+	 <-------------ACKNOWLEDGEMENT----------
+				sequence no(math on 32)==> new no
+		-------------------acknowledgement no=> seq no+1---->
+
+---------------------------------------------------------------------------------------------
+Network Layer
+_____________
+In the transport layer the data we have is in segements
+in newtwork layer data travels in packets
+
+Data link --> Frames
+
+
+Here we work with routers
+
+
+Every routers have its on network address
+Hop by Hop forwarding table
+
+IP -- 192.168.2.30
+
+
+		192.168.2--->network address(sub net id)
+		30 ---------->devices address(Host id)
+
+Control Plane:
+
+It builds the routing tables
+
+Routers are nodes
+links are the edges
+
+1.Static routing (Manually)    ------
+2.Dynamic routing(Accordingly)-------Dijkstra algo,path finding algo
+
+Protocols - IP (Internet Protocol)
+
+Ip addresses ---- Ipv4--> 32 bit num with 4 words
+				Ipv6--> 128 bits 
+		
+				5.6.9.14
+			each number is of 8 bits 
+
+
+class of Ip addresses   sub net masking
+Class A - 0.0.0.0      --127.255.255.255
+Class-B - 128.0.0.0		191."."."
+C	   - 192.0.0.0      223."."."
+D	   - 224.0.0.0		239."."."
+E	   - 240.0.0.0      255."."."
+
+
+Reserved Addresses --- > 127.0.0.0/8
+					127.0.0.1 --- local host or loop back address
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Packets :  Header is of 20 bytes
+ ipv,length , identification no , flags,protocols,checksum,addresses,etc  TTL
+
+TTL (time to live) --- 
+
+
+------------------------------------------------------------------------------------------------
+Ipv6 ---128 bits  - 2 power 32*4 ==3.4x10power38
+
+cons : not backward compatible 
+		ISP would have to shift , lot of hardware work
+a:a:a:a 
+a - hexadecimal 
+16 bit  string
+
+
+----------------------------------------------------------------------------------------------------------------
+Middle Boxes:
+
+1.Firewalls ---> 
+
+2. NAT - network addres translation
+
+
+============================================================================
+
+
+
+Data link layer 
+---------------
