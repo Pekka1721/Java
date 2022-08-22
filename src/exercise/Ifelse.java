@@ -7,11 +7,11 @@ public class Ifelse {
         int even =0;
         int odd =0;
         for(int index = 0;index<number.length;index++){
-            if(index%2==0){
+            if(number[index]%2==0){
                     even++;
             }
             else{
-                odd++;
+                 odd++;
             }
            
     } System.out.println("Even "+even+" Odd "+ odd);
