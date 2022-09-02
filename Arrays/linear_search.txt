@@ -1,0 +1,11 @@
+searching 
+         arr = [18,12,9,14,77,50]
+         Find wheather 14 exists in the array or not?
+         Linear search : start searching from starting index till the end:
+
+        here 14 exists at 3rd index
+
+    if no value found return -1( no a valid index)
+    
+    time complexity of Linearsearch - O(1) | worst case : O(N) N- size of the array;
+ 

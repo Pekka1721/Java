@@ -1,0 +1,49 @@
+Conditions:
+            checking this is this do this or do this 
+            Syntax for If statemet:
+
+            if(boolean expression){
+                body: do this 
+            }elseif{
+                body: then do this 
+            }else{
+                at last do this 
+            }
+
+Loops: 
+           
+           iteration or repeition of tasks print number from 1 to 5;
+
+        for loop:
+                Syntax
+                        for(initialisation;condition;inc/dec){
+                            body
+                        }
+        while loop:
+                Syntax  
+                        initialisation
+                        while(condition){
+                            body
+                            iteration
+                        }
+        do while loop:
+                        Syntax
+                                initialisation
+                                do  {
+                                        do
+                                        increment
+                                }
+                                while(condition);
+        Switch statements:
+                        Syntax
+                        Switch(expression){
+                            cases 
+                            case one:
+                                // Do something;
+                                break;
+                            case two: 
+                                // Do something;
+                                break;
+                            default:
+                                //do something
+                        }  
