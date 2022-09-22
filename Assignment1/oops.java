@@ -1,5 +1,5 @@
 public class oops {
-    class rectangle{
+     static class rectangle{
        int length;
        int width;       //instance variables or member variables
        
@@ -9,10 +9,17 @@ public class oops {
         }
 
 
-       int area(){       //method inside class without parameters and performing operation on the data 
+        int area(){       //method inside class without parameters and performing operation on the data 
         int a =length*width;
         return a;
        }
 
+    }
+    public static void main(String[] args) {
+        //creating objects for the class rectangle
+        rectangle calc1 =new   rectangle();
+        calc1.getValues(6, 4);
+        int ans = calc1.area();
+        System.out.print(ans);
     }    
 }
